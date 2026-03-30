@@ -18,20 +18,28 @@ namespace TencentCloud\Tds\V20220801\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeFraudBase请求参数结构体
+ * 附加信息
  *
- * @method string getDeviceToken() 获取<p>客户端通过SDK获取的设备Token</p>
- * @method void setDeviceToken(string $DeviceToken) 设置<p>客户端通过SDK获取的设备Token</p>
+ * @method string getKey() 获取<p>附加信息名字</p>
+ * @method void setKey(string $Key) 设置<p>附加信息名字</p>
+ * @method string getValue() 获取<p>附加信息内容</p>
+ * @method void setValue(string $Value) 设置<p>附加信息内容</p>
  */
-class DescribeFraudBaseRequest extends AbstractModel
+class ExtraInfo extends AbstractModel
 {
     /**
-     * @var string <p>客户端通过SDK获取的设备Token</p>
+     * @var string <p>附加信息名字</p>
      */
-    public $DeviceToken;
+    public $Key;
 
     /**
-     * @param string $DeviceToken <p>客户端通过SDK获取的设备Token</p>
+     * @var string <p>附加信息内容</p>
+     */
+    public $Value;
+
+    /**
+     * @param string $Key <p>附加信息名字</p>
+     * @param string $Value <p>附加信息内容</p>
      */
     function __construct()
     {
@@ -46,8 +54,12 @@ class DescribeFraudBaseRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("DeviceToken",$param) and $param["DeviceToken"] !== null) {
-            $this->DeviceToken = $param["DeviceToken"];
+        if (array_key_exists("Key",$param) and $param["Key"] !== null) {
+            $this->Key = $param["Key"];
+        }
+
+        if (array_key_exists("Value",$param) and $param["Value"] !== null) {
+            $this->Value = $param["Value"];
         }
     }
 }
